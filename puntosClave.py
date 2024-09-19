@@ -1,14 +1,10 @@
-# 1. Variables y Tipos de Datos
+# 1. Variables y Tipos de Datos --> Inmutables. 
 x = 5
 y = 2.5
 z = "Sato"
 is_active = True
 
 #! 2. Estructura de Datos
-# Arreglos --> Mutables
-list = [1, 2, 3, "Hello", "World"]
-print(list[0])
-
 # Tuplas --> Inmutables
 tupla = (10, 20, 30)
 print(tupla[0])
@@ -17,12 +13,20 @@ print(tupla[0])
 set = {1, 2, 2, 2, 3}
 print(set) # output: {1, 2, 3}
 
-# Diccionarios
+# Arreglos --> Mutables
+list = [1, 2, 3, "Hello", "World"]
+print(list[0])
+
+# Diccionarios --> Mutables
 dict = {
     "name": "Marco",
     "surname": "Mussa"
 }
 print(dict["name"])
+
+#* Recorrerlas
+for elemento in list:
+    print(elemento)
 
 #! 3. Metodos
 string = "Hello World"
@@ -42,10 +46,11 @@ list.sort() # Ordena ascendente
 list.reverse() # Invierte orden
 list.index(2) # Devuelve el indice de la primera aparicion del elemento
 list.clear() # []
+list.push(0)
+list.append(0)
 
 dict.get("name")
 dict.keys()
-
 
 #! 4. Funciones 
 #* Son objetos de primera clase --> Se pueden pasar como parametros a otras funciones o asignarlas a variables 
@@ -76,10 +81,69 @@ def apply_func(function, value):
 
 result = apply_func(square, 2)
 
-# Anidacion
+# Anidacion o Clausuras
 def externa(text):
     def interna():
         return text.upper()
     return interna()
 
 print(externa("sato"))
+
+# Cantidad variable de parametros
+def suma_cuadrados(*args):
+    return
+
+suma_cuadrados((1))
+suma_cuadrados((1, 2))
+suma_cuadrados((1, 2, 3))
+
+# Parametros de tipo Key-Value
+def show_details(**kwargs):
+    for clave, valor in kwargs.items():
+        print(f"{clave}: {valor}")
+
+show_details(name="Sato", lang="Python")
+
+#! 5. Condicionales
+numero = 5
+if numero % 2 == 0:
+    print("El número es par")
+else:
+    print("El número es impar")
+    
+#! Palabras Reservadas
+# nonlocal --> Indicamos que la variable no pertenece a su scope perteneciente. Permite que una funcion interna modifique el valor de una variable ubicada por fuera de esta. 
+
+#! POO
+class Persona:
+    def __init__(self, nombre, edad): # init --> Constructor
+        self.nombre = nombre
+        self.edad = edad
+    
+    def printPersona(self): # En los metodos, siempre que se referencie a una propiedad "self" debe estar
+        print(f"{self.nombre}, {self.edad}")
+        
+persona = Persona("Sato", 23)
+persona.nombre
+persona.printPersona()
+
+#* Herencia
+class Empleado(Persona): 
+    def __init__(self, nombre, edad, ocupacion):
+        super().__init__(nombre, edad) # Propiedades heredadas
+        
+        
+#! Manejo de Excepciones --> Manejar errores en tiempo de ejecucion
+try:
+    num = int(input("Ingresa un número: "))
+    resultado = 10 / num
+except ValueError:
+    # Captura si no se puede convertir la entrada a entero
+    print("Error: Entrada no válida.")
+except ZeroDivisionError:
+    # Captura la excepción de división por cero
+    print("Error: No se puede dividir por cero.")
+except Exception as e:
+    # Captura cualquier otra excepción
+    print(f"Ocurrió un error inesperado: {e}")
+
