@@ -1,3 +1,7 @@
+import pickle
+import json
+import os
+
 # 1. Variables y Tipos de Datos --> Inmutables. 
 x = 5
 y = 2.5
@@ -146,4 +150,38 @@ except ZeroDivisionError:
 except Exception as e:
     # Captura cualquier otra excepción
     print(f"Ocurrió un error inesperado: {e}")
+else:
+    print('No hay excepciones en el bloque principal')
+finally:
+    print('Esto se ejecuta siempre')
 
+
+#! Manejo de Archivos
+# Estructura general
+open('', mode='r', buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)
+
+archivo = open("archivo.txt", mode="w", encoding="utf-8")
+
+# Lectura
+archivo.read()
+archivo.readline()
+archivo.readlines()
+archivo.close() # --> Siempre cerrarlo
+
+# Escritura
+archivo.write("Hello World")
+archivo.close() 
+
+with open("archivo.txt", "r") as archivo:
+    contenido = archivo.read()
+    print(contenido)
+
+#? Pickle
+data = {"name": "Alice", "age": 25}
+with open('data.pickle', 'wb') as f:
+    pickle.dump(data, f) # Serializa y lo escribe en f
+
+# Deserialización con pickle
+with open('data.pickle', 'rb') as f:
+    loaded_data = pickle.load(f)
+    print(loaded_data)  # {'name': 'Alice', 'age': 25}
