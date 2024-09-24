@@ -15,3 +15,6 @@ https://github.com/untref-edd/edd/blob/main/Clases/Clase%203%20-%20Introducci%C3
 
 # Organizacion de Datos
 https://github.com/untref-edd/edd/blob/main/Clases/Clase%204%20-%20Organizaci%C3%B3n%20de%20Datos/Organizaci%C3%B3n%20de%20Datos.ipynb
+
+# Guia Repaso
+https://docs.google.com/document/d/1NMMNPtmwpuPgLBah0I3DyCN7uRpU2WNiZD1d50qP69M/edit
