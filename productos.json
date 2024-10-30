@@ -1,0 +1,15 @@
+{
+    "Laptop": {
+        "marca": "Dell",
+        "precio": 1200,
+        "color": "Negro",
+        "procesador": "Intel i5"
+    },
+    "Tablet": {
+        "marca": "Apple",
+        "precio": 900,
+        "color": "Gris",
+        "almacenamiento": "256GB",
+        "peso": "400g"
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "posiciones": {
+        "Equipo A": {
+            "puntos": 3,
+            "goles a favor": 4,
+            "goles en contra": 2
+        },
+        "Equipo B": {
+            "puntos": 0,
+            "goles a favor": 2,
+            "goles en contra": 4
+        },
+        "Equipo C": {
+            "puntos": 1,
+            "goles a favor": 3,
+            "goles en contra": 3
+        },
+        "Equipo D": {
+            "puntos": 1,
+            "goles a favor": 3,
+            "goles en contra": 3
+        },
+        "Equipo E": {
+            "puntos": 0,
+            "goles a favor": 1,
+            "goles en contra": 2
+        },
+        "Equipo F": {
+            "puntos": 3,
+            "goles a favor": 2,
+            "goles en contra": 1
+        }
+    }
+}
